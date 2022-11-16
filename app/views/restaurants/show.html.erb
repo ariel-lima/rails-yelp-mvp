@@ -1,0 +1,42 @@
+<h2><%= @restaurant.name %></h2>
+
+<ul class="list-group-item">
+<p>Address:<%= @restaurant.address %></p>
+<p>Category:<%= @restaurant.category %></p>
+<p>Phone number<%= @restaurant.phone_number %></p>
+</ul>
+<ul class="list-group-item"  ></ul>
+<% @restaurant.reviews.each do |review|%>
+  <li > <%= review.content  %>-<%= '⭐️' * review.rating %></li>
+<% end %>
+<div class="d-flex">
+<h5><%= link_to "Leave a Review", new_restaurant_review_path(@restaurant) %></h5>
+</div>
+<%= link_to "Back", restaurants_path, class:"ml-10" %>
+
+<%# <%= image_tag product.images.first.image.url(:medium),
+:size => "100%x100%",
+class: "img-responsive center-block" %>
+
+<%# <div class="container">
+  <div class="row mt-5">
+    <% @garden.plants.each do |plant| %>
+      <%# <div class="col-4">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= plant.image_url %>
+          <%# <%= plant.name %>
+          <%# <%= link_to "+", plant_path(plant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "card-remove-link" %>
+        <%# </div>
+      </div>
+    <% end %>
+  <%# </div>
+  <div class="row my-5 justify-content-center">
+    <div class="col-4">
+      <h4>Add a plant</h4>
+      <%= simple_form_for [@garden, @plant] do |f| %>
+        <%# <%= f.input :name, placeholder: "Palm tree" %>
+        <%# <%= f.input :image_url, placeholder: "https://some_nice_image_found_on_google.jpg" %>
+        <%# <%= f.submit "Add", class: "btn btn-primary" %>
+      <%# <% end %>
+    <%# </div>
+  </div>
+</div> %>

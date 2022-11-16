@@ -1,0 +1,16 @@
+
+  <h1 class="container text-center">All Restaurants</h1>
+    <h5 class="text-center"><%= link_to 'Create New Restaurant', new_restaurant_path %></h5>
+
+    <ul class="d-flex row mw-3 p-9">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card m-3" style="width: 22rem;">
+        <img class="card-img-top" src="https://source.unsplash.com/random/?restaurant" alt=""#{restaurant.name}"">
+          <div class="card-body">
+            <h5 class="card-title"> <strong><%= link_to  "#{restaurant.name}", restaurant_path(restaurant["id"])%></strong></h5>
+            <p class="card-text"> <%= restaurant.address %> </p>
+          <a> <%= link_to  "See Details", restaurant_path(restaurant["id"])%></a>
+          </div>
+      </div>
+    <% end %>
+    </ul>

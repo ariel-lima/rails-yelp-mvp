@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+ .index-link {
+  color: blue;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+.btn-primary {
+text-decoration-color: aliceblue;
+}
